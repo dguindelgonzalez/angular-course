@@ -1,0 +1,29 @@
+.calculadora{
+  width: 350px;
+  height: 425px;
+  background-color: lightblue;;
+}
+
+input{
+  width: 300px;
+  height: 30px;
+  margin: 25px;
+  margin-bottom: -5px;
+}
+
+.botones{
+  margin: 25px;
+}
+
+button{
+  width: 100px;
+  height: 50px;
+}
+
+.bigButton{
+  width: 300px;
+}
+
+.operator{
+  width: 75px;
+}
