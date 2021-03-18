@@ -3,23 +3,21 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-calculadora',
   templateUrl: './calculadora.component.html',
-  styleUrls: ['./calculadora.component.css']
+  styleUrls: ['./calculadora.component.css'],
 })
 export class CalculadoraComponent implements OnInit {
-
   input: string;
   resultFlag: boolean;
 
   constructor() {
     this.input = '';
     this.resultFlag = false;
-   }
-
-  ngOnInit(): void {
   }
 
-  onClick($event){
-    if(this.resultFlag){
+  ngOnInit(): void {}
+
+  onClick($event) {
+    if (this.resultFlag) {
       this.resultFlag = false;
       this.input = '';
     }
@@ -27,7 +25,7 @@ export class CalculadoraComponent implements OnInit {
     this.input += $event.target.innerText;
   }
 
-  onEquals(){
+  onEquals() {
     this.input = eval(this.input);
     this.resultFlag = true;
   }
