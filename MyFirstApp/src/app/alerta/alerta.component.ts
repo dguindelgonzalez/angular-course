@@ -7,9 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AlertaComponent implements OnInit {
   @Input('texto') mensaje: string;
+  @Input() subTitulo: string;
 
   constructor() {
     this.mensaje = 'Mensaje alerta por defecto';
+    this.subTitulo = 'Sub Titulo por defecto';
+
     console.log(this.mensaje);
   }
 
