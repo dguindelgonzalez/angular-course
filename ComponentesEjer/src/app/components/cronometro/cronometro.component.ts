@@ -27,7 +27,7 @@ export class CronometroComponent implements OnInit {
       if (this.cronoNumber < 0) {
         this.cronoNumber = this.number;
         this.terminaCronoMensaje.emit(
-          'Ha finalizado el cornometro con valor --> ' + this.number
+          `Ha finalizado el cornometro con valor --> ${this.number}`
         );
         clearInterval(interval);
       }
