@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SaludoComponent } from './saludo/saludo.component';
@@ -17,12 +18,10 @@ import { AlertaComponent } from './alerta/alerta.component';
     Hijo1Component,
     Hijo2Component,
     EventosComponent,
-    AlertaComponent
+    AlertaComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
