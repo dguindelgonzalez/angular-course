@@ -1,2 +1,10 @@
-<app-sumar [sumador1]="sumadores[0]" [sumador2]="sumadores[1]"></app-sumar>
-<app-sumar [sumador1]="sumadores[2]" [sumador2]="sumadores[3]"></app-sumar>
+<app-cronometro
+  (terminaCronoMensaje)="terminaCrono($event)"
+  [number]="numsCronometro[0]"
+></app-cronometro>
+<app-cronometro [number]="numsCronometro[1]"></app-cronometro>
+<app-cronometro [number]="numsCronometro[2]"></app-cronometro>
+<app-cronometro
+  (terminaCronoMensaje)="terminaCrono($event)"
+  [number]="numsCronometro[3]"
+></app-cronometro>

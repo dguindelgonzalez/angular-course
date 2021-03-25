@@ -1,3 +1,11 @@
-<app-alerta [texto]="titulos[0]" subTitulo="Este es el primero"></app-alerta>
+<app-alerta
+  [texto]="titulos[0]"
+  subTitulo="Este es el primero"
+  (alertaPulsada)="onAlertaPulsada($event)"
+></app-alerta>
 <app-alerta [texto]="titulos[1]"></app-alerta>
-<app-alerta [texto]="titulos[2]" subTitulo="Este es el tercero"></app-alerta>
+<app-alerta
+  [texto]="titulos[2]"
+  subTitulo="Este es el tercero"
+  (alertaPulsada)="onAlertaPulsada($event)"
+></app-alerta>

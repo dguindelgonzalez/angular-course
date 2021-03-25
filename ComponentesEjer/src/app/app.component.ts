@@ -6,9 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  sumadores: number[];
+  numsCronometro: number[];
 
   constructor() {
-    this.sumadores = [23, 46, 59, 25];
+    this.numsCronometro = [2, 5, 8, 10];
+  }
+
+  terminaCrono($event) {
+    console.log($event);
   }
 }

@@ -1,28 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-cronometro',
   templateUrl: './cronometro.component.html',
-  styleUrls: ['./cronometro.component.css']
+  styleUrls: ['./cronometro.component.css'],
 })
 export class CronometroComponent implements OnInit {
+  @Input() number: number;
+  @Output() terminaCronoMensaje: EventEmitter<string>;
 
-  number: number;
+  cronoNumber: number;
 
   constructor() {
-    this.number = 10;
-   }
-
-  ngOnInit(): void {
+    this.number = 0;
+    this.terminaCronoMensaje = new EventEmitter();
   }
 
-  startCronometro(){
+  ngOnInit(): void {
+    this.cronoNumber = this.number;
+  }
+
+  startCronometro() {
     let interval = setInterval(() => {
-      this.number--;
-    if(this.number === 0){
-      clearInterval(interval);
-    }
-  }, 1000);
+      this.cronoNumber--;
+      if (this.cronoNumber < 0) {
+        this.cronoNumber = this.number;
+        this.terminaCronoMensaje.emit(
+          'Ha finalizado el cornometro con valor --> ' + this.number
+        );
+        clearInterval(interval);
+      }
+    }, 1000);
   }
 }

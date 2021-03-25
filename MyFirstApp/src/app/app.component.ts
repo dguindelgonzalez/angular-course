@@ -11,4 +11,8 @@ export class AppComponent {
   constructor() {
     this.titulos = ['Pulp Fiction', 'Start Wars', 'Constantine'];
   }
+
+  onAlertaPulsada($event) {
+    console.log($event);
+  }
 }
