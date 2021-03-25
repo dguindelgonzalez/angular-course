@@ -7,27 +7,26 @@ import { interval } from 'rxjs';
   styleUrls: ['./cronometro.component.css'],
 })
 export class CronometroComponent implements OnInit {
-  @Input() number: number;
+  @Input() inicio: number;
   @Output() terminaCronoMensaje: EventEmitter<string>;
 
   cronoNumber: number;
 
   constructor() {
-    this.number = 0;
     this.terminaCronoMensaje = new EventEmitter();
   }
 
   ngOnInit(): void {
-    this.cronoNumber = this.number;
+    this.cronoNumber = this.inicio ? this.inicio : 10;
   }
 
   startCronometro() {
     let interval = setInterval(() => {
       this.cronoNumber--;
       if (this.cronoNumber < 0) {
-        this.cronoNumber = this.number;
+        this.cronoNumber = this.inicio;
         this.terminaCronoMensaje.emit(
-          `Ha finalizado el cornometro con valor --> ${this.number}`
+          `Ha finalizado el cornometro con valor --> ${this.inicio}`
         );
         clearInterval(interval);
       }
