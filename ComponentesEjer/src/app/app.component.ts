@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Pelicula } from './models/pelicula';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   numsCronometro: number[];
+  peliculas: Pelicula[];
 
   constructor() {
     this.numsCronometro = [2, 5, 8, 10];
+    this.peliculas = [];
   }
 
   terminaCrono($event) {
     console.log($event);
+  }
+
+  agregarPelicula($event) {
+    this.peliculas.push({
+      titulo: $event.titulo,
+      descripcion: $event.descripcion,
+    });
   }
 }

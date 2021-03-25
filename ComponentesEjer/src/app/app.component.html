@@ -1,16 +1,4 @@
-<app-cronometro
-  (terminaCronoMensaje)="terminaCrono($event)"
-  [inicio]="numsCronometro[0]"
-></app-cronometro>
-<app-cronometro
-  (terminaCronoMensaje)="terminaCrono($event)"
-  [inicio]="numsCronometro[1]"
-></app-cronometro>
-<app-cronometro
-  (terminaCronoMensaje)="terminaCrono($event)"
-  [inicio]="numsCronometro[2]"
-></app-cronometro>
-<app-cronometro
-  (terminaCronoMensaje)="terminaCrono($event)"
-  [inicio]="numsCronometro[3]"
-></app-cronometro>
+<div>
+  <app-formulario (peliculaEmitter)="agregarPelicula($event)"></app-formulario>
+  <app-lista [peliculasInput]="peliculas"></app-lista>
+</div>
