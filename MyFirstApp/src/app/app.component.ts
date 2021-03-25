@@ -10,9 +10,13 @@ export class AppComponent {
 
   campoTexto: string;
 
+  persona: any;
+
   constructor() {
     this.titulos = ['Pulp Fiction', 'Start Wars', 'Constantine'];
     this.campoTexto = 'Valor inicial';
+
+    this.persona = {};
   }
 
   onAlertaPulsada($event) {
