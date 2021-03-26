@@ -1,9 +1,1 @@
-<div id="lista-div">
-  <p>Listado de peliculas</p>
-  <ul class="peliculas">
-    <li *ngFor="let item of peliculasInput">
-      <span class="badge">{{ item.titulo }}</span> -
-      {{ item.descripcion }}
-    </li>
-  </ul>
-</div>
+<div [innerHTML]="mostrarTareas()" id="lista-div"></div>

@@ -20,9 +20,6 @@ export class AppComponent {
   }
 
   agregarPelicula($event) {
-    this.peliculas.push({
-      titulo: $event.titulo,
-      descripcion: $event.descripcion,
-    });
+    this.peliculas.push($event);
   }
 }

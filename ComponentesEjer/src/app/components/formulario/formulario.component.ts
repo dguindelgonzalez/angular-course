@@ -11,7 +11,7 @@ export class FormularioComponent implements OnInit {
   @Output() peliculaEmitter: EventEmitter<Pelicula>;
 
   constructor() {
-    this.peliculaForm = { titulo: '', descripcion: '' };
+    this.peliculaForm = new Pelicula();
     this.peliculaEmitter = new EventEmitter();
   }
 
@@ -22,8 +22,7 @@ export class FormularioComponent implements OnInit {
       console.log('Por favor rellena titulo y descripción');
     } else {
       this.peliculaEmitter.emit(this.peliculaForm);
-      this.peliculaForm.titulo = '';
-      this.peliculaForm.descripcion = '';
+      this.peliculaForm = new Pelicula();
     }
   }
 }
